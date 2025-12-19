@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Velocidade Global 🌐⚡</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #050816;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 680px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .header h1 {
+            font-size: 2.1em;
+            margin-bottom: 6px;
+            background: linear-gradient(135deg, #21d4fd, #2152ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 0.95em;
+            color: #9aa4c6;
+        }
+
+        .card-teste {
+            background: radial-gradient(circle at top, #111634 0%, #050816 55%, #02030a 100%);
+            border-radius: 22px;
+            padding: 28px 24px 24px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(60, 80, 160, 0.7);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.7);
+        }
+
+        .velocimetro-wrapper {
+            position: relative;
+            width: 270px;
+            height: 210px;
+            margin: 0 auto 20px;
+        }
+
+        .velocimetro-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .valor-central {
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .valor-numero {
+            font-size: 2.1em;
+            font-weight: 700;
+            color: #21d4fd;
+            text-shadow: 0 0 18px rgba(33, 212, 253, 0.8);
+            line-height: 1.1;
+        }
+
+        .valor-unidade {
+            font-size: 0.75em;
+            color: #9aa4c6;
+        }
+
+        .status {
+            font-size: 0.98em;
+            color: #21d4fd;
+            margin-top: 6px;
+            margin-bottom: 14px;
+            font-weight: 600;
+            text-align: center;
+            min-height: 22px;
+        }
+
+        .botao-teste {
+            display: block;
+            margin: 0 auto 10px;
+            background: radial-gradient(circle at 30% 30%, #3ad6ff 0%, #2152ff 45%, #1120a0 100%);
+            color: #fff;
+            border: none;
+            padding: 11px 34px;
+            font-size: 0.98em;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 10px 24px rgba(33, 82, 255, 0.7);
+            letter-spacing: 0.03em;
+            transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease;
+        }
+
+        .botao-teste:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 30px rgba(33, 82, 255, 0.85);
+        }
+
+        .botao-teste:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .servidor-selector {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(90, 110, 190, 0.6);
+            font-size: 0.85em;
+        }
+
+        .servidor-selector label {
+            display: block;
+            margin-bottom: 5px;
+            color: #9aa4c6;
+            font-weight: 600;
+        }
+
+        .servidor-selector select {
+            width: 100%;
+            padding: 7px 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(80, 110, 210, 0.9);
+            background: #050b1a;
+            color: #e4ecff;
+            font-size: 0.9em;
+        }
+
+        .resultado-header { text-align:center; margin-bottom:16px; }
+
+        .resultado-id {
+            background: rgba(10, 16, 40, 0.9);
+            border-radius: 10px;
+            padding: 10px 14px;
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            border: 1px solid rgba(80, 110, 210, 0.9);
+            font-size: 0.85em;
+        }
+
+        .resultado-id strong { font-family: monospace; color:#21d4fd; }
+
+        .btn-copiar {
+            background: rgba(33, 82, 255, 0.2);
+            border: 1px solid rgba(33, 82, 255, 0.9);
+            color: #e8f3ff;
+            padding: 5px 9px;
+            border-radius: 6px;
+            font-size: 0.8em;
+            cursor: pointer;
+        }
+
+        .resultado-principal {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:12px;
+            margin-bottom:14px;
+        }
+
+        .resultado-item {
+            background:#060b1a;
+            border-radius:14px;
+            padding:16px;
+            border:1px solid rgba(70,90,190,0.7);
+            text-align:center;
+        }
+
+        .resultado-item.grande .resultado-valor { font-size:2.2em; }
+
+        .resultado-label {
+            font-size:0.8em;
+            color:#9aa4c6;
+            margin-bottom:6px;
+            text-transform:uppercase;
+            letter-spacing:0.08em;
+        }
+
+        .resultado-valor { font-size:1.8em; font-weight:700; color:#21d4fd; }
+
+        .resultado-unidade { font-size:0.75em; color:#7e89b3; }
+
+        .resultado-secundario {
+            display:grid;
+            grid-template-columns:repeat(4,minmax(0,1fr));
+            gap:10px;
+            margin-bottom:16px;
+        }
+
+        .grafico-container {
+            background:#050b16;
+            border-radius:14px;
+            border:1px solid rgba(70,90,190,0.7);
+            padding:12px;
+            margin-bottom:14px;
+            height:220px;
+        }
+
+        .botao-repetir {
+            width:100%;
+            background:radial-gradient(circle at 30% 30%, #3ad6ff 0%, #2152ff 45%, #1120a0 100%);
+            color:white;
+            border:none;
+            padding:11px;
+            font-size:0.98em;
+            border-radius:32px;
+            cursor:pointer;
+            font-weight:600;
+        }
+
+        .footer {
+            text-align:center;
+            padding-top:12px;
+            border-top:1px solid rgba(60,70,120,0.5);
+            margin-top:18px;
+            font-size:0.85em;
+            color:#8a94c0;
+        }
+
+        .footer span { margin:0 8px; }
+
+        @media (max-width:640px){
+            .resultado-principal { grid-template-columns:1fr; }
+            .resultado-secundario { grid-template-columns:repeat(2,minmax(0,1fr)); }
+        }
+        @media (max-width:480px){
+            .resultado-secundario { grid-template-columns:1fr; }
+            .velocimetro-wrapper { width:240px; height:190px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>🌐 Teste de Velocidade Global</h1>
+        <p>Verifique sua conexão de internet em segundos</p>
+    </div>
+
+    <div id="telaPrincipal" class="card-teste">
+        <div class="velocimetro-wrapper">
+            <svg viewBox="0 0 300 200" class="velocimetro-svg">
+                <defs>
+                    <linearGradient id="gradArco" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%"   stop-color="#21d4fd"/>
+                        <stop offset="40%"  stop-color="#2af598"/>
+                        <stop offset="100%" stop-color="#17376d"/>
+                    </linearGradient>
+                    <filter id="shadowNeedle">
+                        <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+                        <feOffset in="blur" dx="0" dy="3" result="offsetBlur"/>
+                        <feFlood flood-color="#00c3ff" flood-opacity="0.9"/>
+                        <feComposite in2="offsetBlur" operator="in" result="shadow"/>
+                        <feMerge>
+                            <feMergeNode in="shadow"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- arco -->
+                <path d="M 30 160 A 120 120 0 0 1 270 160"
+                      fill="none"
+                      stroke="url(#gradArco)"
+                      stroke-width="20"
+                      stroke-linecap="round"/>
+
+                <!-- NÚMEROS DENTRO DO ARCO (como imagens 1 e 4) -->
+                <g font-family="Segoe UI, sans-serif"
+                   font-weight="600"
+                   fill="#dde4ff"
+                   font-size="13">
+                    <!-- 0 (esquerda embaixo, dentro) -->
+                    <text x="55" y="172" text-anchor="middle">0</text>
+                    <!-- 250 (esquerda em cima, dentro) -->
+                    <text x="92" y="98" text-anchor="middle">250</text>
+                    <!-- 500 (topo, dentro) -->
+                    <text x="150" y="64" text-anchor="middle">500</text>
+                    <!-- 750 (direita em cima, dentro) -->
+                    <text x="208" y="98" text-anchor="middle">750</text>
+                    <!-- 1000 (direita embaixo, dentro) -->
+                    <text x="245" y="172" text-anchor="middle">1000</text>
+                </g>
+
+                <!-- AGULHA AZUL -->
+                <g id="needleGroup" transform="rotate(-120 150 160)">
+                    <line x1="150" y1="160" x2="150" y2="70"
+                          stroke="#33c9ff"
+                          stroke-width="10"
+                          stroke-linecap="round"
+                          filter="url(#shadowNeedle)"/>
+                    <circle cx="150" cy="66" r="8"
+                            fill="#33c9ff"
+                            filter="url(#shadowNeedle)"/>
+                </g>
+
+                <!-- centro -->
+                <circle cx="150" cy="160" r="13" fill="#0b1224" stroke="#33c9ff" stroke-width="3"/>
+                <circle cx="150" cy="160" r="6"  fill="#ffffff"/>
+            </svg>
+
+            <div class="valor-central">
+                <div class="valor-numero" id="valorNumero">0</div>
+                <div class="valor-unidade">Mbps</div>
+            </div>
+        </div>
+
+        <div class="status" id="status">Pronto para testar</div>
+
+        <button class="botao-teste" id="botaoTeste" onclick="iniciarTeste()">
+            ▶ INICIAR TESTE
+        </button>
+
+        <div class="servidor-selector">
+            <label>📍 Servidor:</label>
+            <select id="servidorSelect">
+                <option value="cloudflare">Cloudflare (Global)</option>
+                <option value="google">Google (USA)</option>
+                <option value="amazon">Amazon (São Paulo)</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="telaResultados" class="card-teste" style="display:none;">
+        <div class="resultado-header">
+            <div class="resultado-id">
+                <span>ID: <strong id="resultadoID">--</strong></span>
+                <button class="btn-copiar" onclick="copiarID()">📋 Copiar</button>
+            </div>
+        </div>
+
+        <div class="resultado-principal">
+            <div class="resultado-item grande">
+                <div class="resultado-label">📥 DOWNLOAD</div>
+                <div class="resultado-valor" id="downloadResultado">--</div>
+                <div class="resultado-unidade">Mbps</div>
+            </div>
+            <div class="resultado-item grande">
+                <div class="resultado-label">📤 UPLOAD</div>
+                <div class="resultado-valor" id="uploadResultado">--</div>
+                <div class="resultado-unidade">Mbps</div>
+            </div>
+        </div>
+
+        <div class="resultado-secundario">
+            <div class="resultado-item">
+                <div class="resultado-label">📡 PING</div>
+                <div class="resultado-valor" id="pingResultado">--</div>
+                <div class="resultado-unidade">ms</div>
+            </div>
+            <div class="resultado-item">
+                <div class="resultado-label">📊 JITTER</div>
+                <div class="resultado-valor" id="jitterResultado">--</div>
+                <div class="resultado-unidade">ms</div>
+            </div>
+            <div class="resultado-item">
+                <div class="resultado-label">🌍 SERVIDOR</div>
+                <div class="resultado-valor" id="servidorResultado">--</div>
+                <div class="resultado-unidade">info</div>
+            </div>
+            <div class="resultado-item">
+                <div class="resultado-label">📍 LOCALIZAÇÃO</div>
+                <div class="resultado-valor" id="localizacaoResultado">--</div>
+                <div class="resultado-unidade">cidade</div>
+            </div>
+        </div>
+
+        <div class="grafico-container">
+            <canvas id="graficoVelocidade"></canvas>
+        </div>
+
+        <button class="botao-repetir" onclick="voltarParaTeste()">
+            🔄 REPETIR TESTE
+        </button>
+    </div>
+
+    <div class="footer">
+        <span id="visitantes">👥 Visitantes: --</span> |
+        <span id="testes">🧪 Testes: --</span>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

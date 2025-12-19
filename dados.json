@@ -1,0 +1,296 @@
+{
+  "visitantes": 44,
+  "testes_realizados": 42,
+  "data_criacao": "19/12/2025",
+  "historico_testes": [
+    {
+      "timestamp": "2025-12-19T15:44:25.688Z",
+      "ping": "2173",
+      "download": "26.23",
+      "upload": "5.92"
+    },
+    {
+      "timestamp": "2025-12-19T15:46:39.040Z",
+      "ping": "1372",
+      "download": "24.30",
+      "upload": "6.32"
+    },
+    {
+      "timestamp": "2025-12-19T15:47:18.542Z",
+      "ping": "247",
+      "download": "412.22",
+      "upload": "13.33"
+    },
+    {
+      "timestamp": "2025-12-19T16:00:34.425Z",
+      "ping": 711,
+      "download": 326.02,
+      "upload": 318.72
+    },
+    {
+      "timestamp": "2025-12-19T16:03:57.670Z",
+      "ping": 436,
+      "download": 344.08,
+      "upload": 351.43
+    },
+    {
+      "timestamp": "2025-12-19T16:28:19.345Z",
+      "ping": 8,
+      "download": 408.8,
+      "upload": 34.43,
+      "jitter": 2
+    },
+    {
+      "timestamp": "2025-12-19T16:29:04.531Z",
+      "ping": 8,
+      "download": 476.35,
+      "upload": 17.41,
+      "jitter": 2
+    },
+    {
+      "timestamp": "2025-12-19T16:29:29.459Z",
+      "ping": 8,
+      "download": 475.81,
+      "upload": 28.22,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T16:35:21.266Z",
+      "ping": 8,
+      "download": 47.77,
+      "upload": 10.88,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T17:02:43.394Z",
+      "ping": 8,
+      "download": 7.85,
+      "upload": 34.55,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T17:02:55.465Z",
+      "ping": 8,
+      "download": 256.85,
+      "upload": 19.57,
+      "jitter": 2
+    },
+    {
+      "timestamp": "2025-12-19T17:03:35.231Z",
+      "ping": 8,
+      "download": 354.02,
+      "upload": 5.96,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T17:03:58.640Z",
+      "ping": 8,
+      "download": 382.08,
+      "upload": 25.41,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T17:04:21.620Z",
+      "ping": 7,
+      "download": 405.74,
+      "upload": 13.19,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T17:05:21.719Z",
+      "ping": 8,
+      "download": 467.07,
+      "upload": 46.4,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T17:05:53.204Z",
+      "ping": 8,
+      "download": 427.34,
+      "upload": 33.84,
+      "jitter": 2
+    },
+    {
+      "timestamp": "2025-12-19T17:08:26.171Z",
+      "ping": 8,
+      "download": 252.52,
+      "upload": 5.69,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T17:15:11.066Z",
+      "ping": 8,
+      "download": 402.72,
+      "upload": 8.66,
+      "jitter": 2
+    },
+    {
+      "timestamp": "2025-12-19T17:43:10.151Z",
+      "ping": 8,
+      "download": 423.77,
+      "upload": 30.53,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T17:43:31.023Z",
+      "ping": 8,
+      "download": 450.4,
+      "upload": 18.2,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T17:44:46.476Z",
+      "ping": 8,
+      "download": 382.95,
+      "upload": 20.6,
+      "jitter": 2
+    },
+    {
+      "timestamp": "2025-12-19T17:45:47.207Z",
+      "ping": 8,
+      "download": 417.34,
+      "upload": 32.12,
+      "jitter": 0
+    },
+    {
+      "timestamp": "2025-12-19T17:48:27.009Z",
+      "ping": 8,
+      "download": 259.59,
+      "upload": 30.42,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T17:49:06.327Z",
+      "ping": 8,
+      "download": 384.36,
+      "upload": 27.86,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T17:51:58.351Z",
+      "ping": 8,
+      "download": 427.01,
+      "upload": 18.79,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T17:52:34.456Z",
+      "ping": 8,
+      "download": 317.09,
+      "upload": 15.06,
+      "jitter": 0
+    },
+    {
+      "timestamp": "2025-12-19T18:00:50.847Z",
+      "ping": 9,
+      "download": 188.91,
+      "upload": 23.62,
+      "jitter": 3
+    },
+    {
+      "timestamp": "2025-12-19T18:02:15.838Z",
+      "ping": 8,
+      "download": 422.92,
+      "upload": 42.19,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T18:03:15.198Z",
+      "ping": 8,
+      "download": 446.68,
+      "upload": 39.78,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T18:07:01.816Z",
+      "ping": 9,
+      "download": 418.59,
+      "upload": 19.39,
+      "jitter": 2
+    },
+    {
+      "timestamp": "2025-12-19T18:07:20.430Z",
+      "ping": 9,
+      "download": 459.52,
+      "upload": 26.75,
+      "jitter": 2
+    },
+    {
+      "timestamp": "2025-12-19T18:08:55.632Z",
+      "ping": 8,
+      "download": 444.43,
+      "upload": 13.13,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T18:11:02.869Z",
+      "ping": 8,
+      "download": 256.81,
+      "upload": 11.82,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T18:16:02.532Z",
+      "ping": 9,
+      "download": 384.36,
+      "upload": 23.82,
+      "jitter": 2
+    },
+    {
+      "timestamp": "2025-12-19T18:19:04.847Z",
+      "ping": 8,
+      "download": 438.28,
+      "upload": 23.46,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T18:23:00.552Z",
+      "ping": 8,
+      "download": 389.81,
+      "upload": 38.81,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T18:26:20.138Z",
+      "ping": 9,
+      "download": 369.95,
+      "upload": 11.51,
+      "jitter": 2
+    },
+    {
+      "timestamp": "2025-12-19T18:26:54.820Z",
+      "ping": 8,
+      "download": 443.84,
+      "upload": 18.85,
+      "jitter": 0
+    },
+    {
+      "timestamp": "2025-12-19T18:37:46.273Z",
+      "ping": 8,
+      "download": 392.82,
+      "upload": 31.57,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T18:39:09.733Z",
+      "ping": 8,
+      "download": 434.42,
+      "upload": 28.19,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T18:42:14.382Z",
+      "ping": 8,
+      "download": 365.84,
+      "upload": 37.01,
+      "jitter": 1
+    },
+    {
+      "timestamp": "2025-12-19T18:54:17.865Z",
+      "ping": 8,
+      "download": 376.42,
+      "upload": 12.91,
+      "jitter": 1
+    }
+  ]
+}
